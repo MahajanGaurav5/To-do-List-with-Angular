@@ -1,4 +1,35 @@
 <h1>{{title}}</h1>
+<!-- <div class="ip1"> -->
+<!-- <input type="text" placeholder="Enter New Task" #task  size="50"/></div> -->
+<br />
 
-<input type="text" placeholder="Enter New Task" #Task />
-<br /><br />
+  <!-- <label for="exampleInputPassword1" class="form-label mt-4">lable-text</label> -->
+  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Write Your Task" autocomplete="off" #task >
+
+<!-- <div class="btn1">
+<button (click)="addTask(task.value)">Add New Task </button></div> -->
+<br />
+<!-- <button  (click)="addTask(task.value)" type="button" class="btn btn-success">Add New Task</button> -->
+<!-- ̇<button (click)="addTask(task.value); changeTextAlignmentToLeft()" type="button" class="btn btn-success">Add New Task</button> -->
+<button (click)="addTask(task.value)" type="button" class="btn btn-success">Add New Task</button>
+
+  <br>
+  <br>
+   <h3 style="color: rgb(200, 46, 54); border: 1px solid gray; background-color: rgb(201, 199, 209); padding: 10px;
+   border-radius: 10px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, 
+   sans-serif;text-align: center;">List of Tasks</h3>
+  <!-- <ol *ngFor="let item of list" type="I" start="1">
+    <li><h3>{{item.name}}</h3>
+        <button (click)="removeTask(item.id)" type="button" class="btn btn-danger" style="margin: 30px; ">Remove</button>
+  </ol>  -->
+  <ol *ngFor="let item of list" type="I" start="1">
+    <li style="display: flex; flex-direction: column; align-items: center;">
+        <h3 [style.text-align]="isTextCentered ? 'center' : 'left'">{{item.name}}</h3>
+        <div style="display: flex; justify-content: center; width: 100%;">
+          <button (click)="removeTask(item.id)" type="button" class="btn btn-danger" style="margin: 15px 0;">Remove</button>
+      </div>
+        
+    </li>
+</ol>
+
+  
